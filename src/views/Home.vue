@@ -7,10 +7,10 @@
         <cv-header-global-action aria-label="Criar Equipe" aria-controls="events-panel" @click="actionTeams" >
           <Events32 />
         </cv-header-global-action>
-
       </template>
-      <template slot="left-panels">
-        <cv-side-nav id="side-nav">
+      <template slot="left-panels"></template>
+    </cv-header>
+    <cv-side-nav id="side-nav" fixed expanded>
           <cv-side-nav-items>
             <cv-side-nav-menu title="Equipes" expanded>
               <cv-side-nav-menu-item v-for="equipe in equipes" :key="equipe">{{equipe}}</cv-side-nav-menu-item>
@@ -22,9 +22,9 @@
             <cv-side-nav-link href="javascript:void(0)">Sobre</cv-side-nav-link>
           </cv-side-nav-items>
         </cv-side-nav>
-      </template>
-    </cv-header>
-    
+    <cv-content id="#main-content">
+      <router-view />
+    </cv-content>
   </div>
 </template>
 

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
 import Signin from '../views/Signin.vue'
+import CreateTeam from '../components/CreateTeam.vue'
 
 Vue.use(VueRouter)
 
@@ -14,7 +15,13 @@ Vue.use(VueRouter)
   {
     path: '/home',
     name: 'Home',
-    component: Home
+    component: Home,
+    children:[
+      {
+        path: 'create-team',
+        component: CreateTeam
+      }
+    ]
   },
   {
     path: '/about',
