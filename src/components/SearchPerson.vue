@@ -2,12 +2,13 @@
     <div>
         <cv-search size='xl' id="search-1" placeHolderText="Search" @input="searchUser"/>
         <div>
-            <div v-for="user in users" :key="user" >{{user}}</div>
+            <div v-for="user in users" :key="user._id" >{{user.apelido}}</div>
         </div>
     </div>
 </template>
 
 <script>
+import { TeamService } from '../services/team.service'
 export default {
     
     data(){
@@ -17,8 +18,10 @@ export default {
     },
     methods:{
         searchUser(text){
-            console.log(text);
-            this.users = ['teste']
+            TeamService.listarUsuarios(text).then((response)=>{
+                console.log(response);
+                this.users = response.data
+            })
         }
     }
 }
