@@ -1,7 +1,7 @@
 <template>
     <div>
         <cv-search size='xl' id="search-1" placeHolderText="Search" @input="searchUser"/>
-        <div>
+        <div class="users-list">
             <div v-for="user in users" :key="user._id" v-on:click="selectUser">{{user.apelido}}</div>
         </div>
     </div>
@@ -27,11 +27,27 @@ export default {
         },
         selectUser(event){
             this.$emit('usuarioSelecionado', event.target.textContent)
+            this.users = []
         }
     }
 }
 </script>
 
-<style>
-
+<style lang="scss">
+    @import '../styles/_carbon';
+    
+    .users-list{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        div{
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            cursor:pointer;
+            background-color: $carbon--cool-gray-10;
+            text-align: left;
+            padding: 0 $spacing-04;
+        }
+    }
 </style>
