@@ -13,4 +13,8 @@ export class TeamService {
         return axios.get(this.url+"/users/listar/"+texto)
     }
 
+    static criarEquipe(nome: string, usuarios: string[]){
+        return axios.post(this.url+"/teams/create",{ equipe:{nome, usuarios} })
+    }
+
 }

@@ -9,7 +9,7 @@
     <cv-data-table
       title="Usuários Inseridos"
       :columns="columns"
-      :data="filteredData"
+      :data="usuariosData"
       ref="table"
     >
       <template slot="batch-actions">
@@ -20,13 +20,14 @@
       </template>
     </cv-data-table>
 
-    <cv-button>Criar Equipe</cv-button>
+    <cv-button @click="criarEquipe()">Criar Equipe</cv-button>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import SearchPerson from "./SearchPerson.vue";
+import { TeamService } from '../services/team.service';
 
 export default Vue.extend({
   name: "CreateTeam",
@@ -35,18 +36,24 @@ export default Vue.extend({
   },
   methods: {
     adicionarNaLista(usuario: any) {
-      console.log(usuario);
+      this.usuariosData.push([usuario.apelido, usuario.email])
     },
     removerDaLista(){
       const refTable: any = this.$refs.table
       const indexLines = refTable.selectedRows
-      this.filteredData = this.filteredData.filter((element, index)=> !indexLines.find(selIndex=> selIndex == index))
+      this.usuariosData = this.usuariosData.filter((element, index)=> !indexLines.find(selIndex=> selIndex == index))
+    },
+    criarEquipe(){
+      TeamService.criarEquipe(this.nomeEquipe, this.usuariosData).then((resp: any)=>{
+        console.log(resp);
+      })
     }
   },
-  data() {
+  data: function() {
     return {
       columns: ["Nome", "Email"],
-      filteredData: [["Vitor Baggi", "vitor_baggi@hotmail.com"],["Pedro", "pedro@hotmail.com"]]
+      usuariosData: new Array<any>(), 
+      nomeEquipe: ''
     };
   }
 })

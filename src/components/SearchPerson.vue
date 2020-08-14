@@ -2,7 +2,7 @@
     <div>
         <cv-search size='xl' id="search-1" placeHolderText="Search" @input="searchUser"/>
         <div class="users-list">
-            <div v-for="user in users" :key="user._id" v-on:click="selectUser">{{user.apelido}}</div>
+            <div v-for="user in users" :key="user._id" @click="selectUser(user)">{{user.apelido}}</div>
         </div>
     </div>
 </template>
@@ -25,8 +25,8 @@ export default {
                 this.users = response.data
             })
         },
-        selectUser(event){
-            this.$emit('usuarioSelecionado', event.target.textContent)
+        selectUser(usuario){
+            this.$emit('usuarioSelecionado', usuario)
             this.users = []
         }
     }
