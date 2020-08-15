@@ -2,7 +2,10 @@
     <cv-form @submit.prevent="fazerLogin">
         <cv-text-input v-model="username" id="username" label="Nome de Usuário"></cv-text-input>
         <cv-text-input v-model="password" id="password" label="Senha do Usuário" type="password"></cv-text-input>
-        <cv-button>Entrar</cv-button>
+        <cv-button :disabled="isLoading">
+            <div v-if="!isLoading">Entrar</div>
+            <cv-loading small :active="isLoading"  v-if="isLoading"></cv-loading>
+        </cv-button>
     </cv-form>
 </template>
 
@@ -14,10 +17,14 @@ import { LoginService } from '../services/login.service';
 export default class Login extends Vue {
     username = ''
     password = ''
-
+    isLoading = false
     fazerLogin(){
+        this.isLoading = true
         LoginService.login(this.username, this.password).then((resp)=>{
             this.$router.push('/home')
+            this.isLoading = false
+        }, error=>{
+            this.isLoading = false
         })
     }
     

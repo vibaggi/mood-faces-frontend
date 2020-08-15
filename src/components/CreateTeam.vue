@@ -2,7 +2,7 @@
   <div>
     <h3>Criação de equipe</h3>
     <p>Dê um nome e inclua participantes à sua equipe de trabalho.</p>
-    <cv-text-input label="Nome da Equipe" placeholder="Equipe do balacobaco"></cv-text-input>
+    <cv-text-input label="Nome da Equipe" placeholder="Equipe do balacobaco" v-model="nomeEquipe"></cv-text-input>
     <h4>lista de participantes</h4>
     <SearchPerson v-on:usuarioSelecionado="adicionarNaLista" />
 
@@ -44,7 +44,7 @@ export default Vue.extend({
       this.usuariosData = this.usuariosData.filter((element, index)=> !indexLines.find(selIndex=> selIndex == index))
     },
     criarEquipe(){
-      TeamService.criarEquipe(this.nomeEquipe, this.usuariosData).then((resp: any)=>{
+      TeamService.criarEquipe(this.nomeEquipe, this.usuariosData.map(info=> info[0])).then((resp: any)=>{
         console.log(resp);
       })
     }

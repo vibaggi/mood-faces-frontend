@@ -2,7 +2,7 @@
   <div class="home">
     <cv-header aria-label="Carbon header">
       <cv-skip-to-content href="#main-content">Skip to content</cv-skip-to-content>
-      <cv-header-name href="javascript:void(0)" prefix="Mood Faces">[Platform]</cv-header-name>
+      <cv-header-name href="javascript:void(0)" prefix="Mood Faces" @click="home">[Platform]</cv-header-name>
       <template slot="header-global">
         <cv-header-global-action aria-label="Criar Equipe" aria-controls="events-panel" @click="actionTeams" >
           <Events32 />
@@ -30,11 +30,18 @@
 
 <script>
 import Events32 from '@carbon/icons-vue/es/events/32'
+import { TeamService } from './../services/team.service'
 export default {
   name: "Home",
-  computed: {
-    equipes() {
-      return ["ABC", "DEF", "GHI"];
+  created: function(){
+    TeamService.listarEquipesPorUsuario("vi").then((resp)=>{
+      const equipes = resp.data.map((team)=> team.nome);
+      this.equipes = equipes
+    })
+  },
+  data: ()=>{
+    return {
+      equipes: []
     }
   },
   components: {
@@ -42,7 +49,10 @@ export default {
   },
   methods: {
     actionTeams(){
-      console.log("Criando Equipe");
+      this.$router.push('/home/create-team')
+    },
+    home(){
+      this.$router.push('/home')
     }
   }
 };

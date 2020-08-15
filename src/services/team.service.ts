@@ -9,6 +9,10 @@ export class TeamService {
         return axios.get(this.url+"/teams/listar/"+texto)
     }
 
+    static listarEquipesPorUsuario(login: string){
+        return axios.get(this.url+"/teams/listar/porusuario/"+login)
+    }
+
     static listarUsuarios(texto: string){
         return axios.get(this.url+"/users/listar/"+texto)
     }
