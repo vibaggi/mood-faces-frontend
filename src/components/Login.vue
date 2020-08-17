@@ -21,7 +21,8 @@ export default class Login extends Vue {
     fazerLogin(){
         this.isLoading = true
         LoginService.login(this.username, this.password).then((resp)=>{
-            this.$router.push('/home')
+            this.$store.commit('LOGIN', resp.data)
+            this.$router.push('/home/about')
             this.isLoading = false
         }, error=>{
             this.isLoading = false

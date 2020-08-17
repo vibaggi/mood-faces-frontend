@@ -2,7 +2,7 @@
   <div class="home">
     <cv-header aria-label="Carbon header">
       <cv-skip-to-content href="#main-content">Skip to content</cv-skip-to-content>
-      <cv-header-name href="javascript:void(0)" prefix="Mood Faces" @click="home">[Platform]</cv-header-name>
+      <cv-header-name href="javascript:void(0)" prefix="Mood Faces" @click="home"> Platform </cv-header-name>
       <template slot="header-global">
         <cv-header-global-action aria-label="Criar Equipe" aria-controls="events-panel" @click="actionTeams" >
           <Events32 />
@@ -13,13 +13,13 @@
     <cv-side-nav id="side-nav" fixed expanded>
           <cv-side-nav-items>
             <cv-side-nav-menu title="Equipes" expanded>
-              <cv-side-nav-menu-item v-for="equipe in equipes" :key="equipe">{{equipe}}</cv-side-nav-menu-item>
+              <cv-side-nav-menu-item v-for="equipe in $store.getters.teams" :key="equipe._id">{{equipe.nome}}</cv-side-nav-menu-item>
             </cv-side-nav-menu>
             <cv-side-nav-menu title="Dashbords" expanded>
               <cv-side-nav-menu-item href="javascript:void(0)">Seu desempenho</cv-side-nav-menu-item>
             </cv-side-nav-menu>
             <cv-side-nav-link href="javascript:void(0)">Ajuda</cv-side-nav-link>
-            <cv-side-nav-link href="javascript:void(0)">Sobre</cv-side-nav-link>
+            <cv-side-nav-link href="javascript:void(0)" @click="home">Sobre</cv-side-nav-link>
           </cv-side-nav-items>
         </cv-side-nav>
     <cv-content id="#main-content">
@@ -34,14 +34,13 @@ import { TeamService } from './../services/team.service'
 export default {
   name: "Home",
   created: function(){
-    TeamService.listarEquipesPorUsuario("vi").then((resp)=>{
-      const equipes = resp.data.map((team)=> team.nome);
-      this.equipes = equipes
+    TeamService.listarEquipesPorUsuario(this.$store.getters.login).then((resp)=>{
+      this.$store.commit('REFRESH_TEAM', resp.data)
     })
   },
   data: ()=>{
     return {
-      equipes: []
+      // equipes: this.
     }
   },
   components: {
@@ -52,8 +51,8 @@ export default {
       this.$router.push('/home/create-team')
     },
     home(){
-      this.$router.push('/home')
-    }
+      this.$router.push('/home/about')
+    },
   }
 };
 </script>

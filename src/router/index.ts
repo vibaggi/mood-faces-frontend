@@ -20,13 +20,13 @@ Vue.use(VueRouter)
       {
         path: 'create-team',
         component: CreateTeam
+      },
+      {
+        path: 'about',
+        name: 'About',
+        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
       }
     ]
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
     path: '/signup',

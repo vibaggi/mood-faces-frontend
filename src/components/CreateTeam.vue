@@ -10,7 +10,7 @@
       title="Usuários Inseridos"
       :columns="columns"
       :data="usuariosData"
-      ref="table"
+      ref="table" id="tabelaUsuarios"
     >
       <template slot="batch-actions">
         <cv-button @click="removerDaLista">
@@ -20,7 +20,7 @@
       </template>
     </cv-data-table>
 
-    <cv-button @click="criarEquipe()">Criar Equipe</cv-button>
+    <cv-button @click="criarEquipe()" id="btnCreateTeam">Criar Equipe</cv-button>
   </div>
 </template>
 
@@ -36,7 +36,7 @@ export default Vue.extend({
   },
   methods: {
     adicionarNaLista(usuario: any) {
-      this.usuariosData.push([usuario.apelido, usuario.email])
+      this.usuariosData.push([usuario.apelido, usuario.login, usuario.email])
     },
     removerDaLista(){
       const refTable: any = this.$refs.table
@@ -44,14 +44,15 @@ export default Vue.extend({
       this.usuariosData = this.usuariosData.filter((element, index)=> !indexLines.find(selIndex=> selIndex == index))
     },
     criarEquipe(){
-      TeamService.criarEquipe(this.nomeEquipe, this.usuariosData.map(info=> info[0])).then((resp: any)=>{
+      TeamService.criarEquipe(this.nomeEquipe, this.usuariosData.map(info=> info[1])).then((resp: any)=>{
+        this.$router.push("/home/about")
         console.log(resp);
       })
     }
   },
   data: function() {
     return {
-      columns: ["Nome", "Email"],
+      columns: ["Nome", "Login", "Email"],
       usuariosData: new Array<any>(), 
       nomeEquipe: ''
     };
@@ -60,5 +61,10 @@ export default Vue.extend({
 </script>
 
 
-<style>
+<style lang="scss">
+  @import '../styles/_carbon';
+
+  #tabelaUsuarios, #btnCreateTeam{
+    margin-top: $spacing-04;
+  }
 </style>
