@@ -2,7 +2,7 @@
     <div class="mood-timeline-container">
         <div id="mood-timeline-data">
             <div id="mood-timeline-data-calendar">
-                
+                {{timeLineData}}
             </div>
             <div id="mood-timeline-data-y-legend">
 

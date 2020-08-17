@@ -13,7 +13,7 @@
     <cv-side-nav id="side-nav" fixed expanded>
           <cv-side-nav-items>
             <cv-side-nav-menu title="Equipes" expanded>
-              <cv-side-nav-menu-item v-for="equipe in $store.getters.teams" :key="equipe._id">{{equipe.nome}}</cv-side-nav-menu-item>
+              <cv-side-nav-menu-item v-for="equipe in $store.getters.teams" :key="equipe._id" @click="showTeam(equipe._id)">{{equipe.nome}}</cv-side-nav-menu-item>
             </cv-side-nav-menu>
             <cv-side-nav-menu title="Dashbords" expanded>
               <cv-side-nav-menu-item href="javascript:void(0)">Seu desempenho</cv-side-nav-menu-item>
@@ -53,6 +53,10 @@ export default {
     home(){
       this.$router.push('/home/about')
     },
+    showTeam(id){
+      this.$store.commit('SET_CURRENT_TEAM', id)
+      this.$router.push('/home/team')
+    }
   }
 };
 </script>

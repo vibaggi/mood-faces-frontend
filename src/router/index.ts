@@ -3,6 +3,7 @@ import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
 import Signin from '../views/Signin.vue'
 import CreateTeam from '../components/CreateTeam.vue'
+import Team from '../views/Team.vue'
 
 Vue.use(VueRouter)
 
@@ -25,6 +26,10 @@ Vue.use(VueRouter)
         path: 'about',
         name: 'About',
         component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+      },
+      {
+        path: 'team',
+        component: Team
       }
     ]
   },
