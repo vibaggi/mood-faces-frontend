@@ -21,4 +21,8 @@ export class TeamService {
         return axios.post(this.url+"/teams/create",{ equipe:{nome, usuarios} })
     }
 
+    static avaliarDia(team: string, mood: string, login: string){
+        return axios.post(this.url+"/teams/evaluate",{ team, mood, login})
+    }
+
 }

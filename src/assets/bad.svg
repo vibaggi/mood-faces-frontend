@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="204" height="165" viewBox="0 0 204 165">
+  <g id="Grupo_10707" data-name="Grupo 10707" transform="translate(-313 -270)">
+    <rect id="Retângulo_4" data-name="Retângulo 4" width="204" height="165" transform="translate(313 270)" fill="#c8355d"/>
+    <g id="Grupo_3" data-name="Grupo 3" transform="translate(93.982 185.871)">
+      <path id="Caminho_5" data-name="Caminho 5" d="M286.423,136.123a241.817,241.817,0,0,1,40.778-2.1,2.139,2.139,0,0,1,1.735.6,2.107,2.107,0,0,1,.2,1.511,62.256,62.256,0,0,1-8.2,24.072,9.493,9.493,0,0,1-2.91,3.419c-1.582.987-3.551,1.038-5.413,1.063l-28.02.366a3.369,3.369,0,0,1-1.882-.341,2.928,2.928,0,0,1-1.058-1.689c-2.426-8.033,4.858-16.823,1.953-24.7" transform="translate(16.117 45.702)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="8"/>
+      <circle id="Elipse_3" data-name="Elipse 3" cx="14.771" cy="14.771" r="14.771" transform="translate(277.214 122.707)" fill="#fff"/>
+      <ellipse id="Elipse_4" data-name="Elipse 4" cx="14.771" cy="9.718" rx="14.771" ry="9.718" transform="translate(336.299 132.813)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

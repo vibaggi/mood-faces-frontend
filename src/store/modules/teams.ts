@@ -1,3 +1,4 @@
+import { TeamService } from '@/services/team.service';
 
 
 export default {
@@ -15,11 +16,19 @@ export default {
         SET_CURRENT_TEAM(state: any, _id: number){
             console.log("current id", _id);
             state.currentTeamId = _id
+        },
+        EVALUATE_DAY(state: any, payload: any){
+            console.log(payload);
+            TeamService.avaliarDia(state.currentTeamId, payload.mood, payload.login).then((resp: any)=>{
+                console.log(resp.data);
+                const teamActual = resp.data
+                const index = state.teams.findIndex(t=> t._id == state.currentTeamId)
+                state.teams[index].data = teamActual.data //refresh data
+            })
         }
     },
     getters: {
         currentTeam(state: any){
-            console.log(state.teams.find( (team: any) => team._id == state.currentTeamId));
             return state.teams.find( (team: any) => team._id == state.currentTeamId) || {}
         },
         team(state: any, id: number){

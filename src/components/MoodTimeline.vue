@@ -4,9 +4,6 @@
             <div id="mood-timeline-data-calendar">
                 {{timeLineData}}
             </div>
-            <div id="mood-timeline-data-y-legend">
-
-            </div>
         </div>
         <div id="mood-timeline-legends">
             <div class="mood-timeline-legends-item">

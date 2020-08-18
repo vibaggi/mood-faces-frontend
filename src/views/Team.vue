@@ -1,29 +1,60 @@
 <template>
-    <div>
-        <h3>{{team.nome}}</h3>
-        <p>TESTE</p>
-        <MoodTimeline :timeLineData="team.data"/>
-    </div>
+  <div>
+    <h3>{{team.nome}}</h3>
+    <p>TESTE</p>
+    <MoodTimeline :timeLineData="team.data" />
+    <cv-button>Avaliar Dia</cv-button>
+
+    <cv-modal :visible="true" >
+      <template slot="content">
+        <div id="mood-timeline-data-y-legend">
+                <div class="bx--grid">
+                    <div class="bx--row">
+                        <div class="bx--col"><img src="@/assets/amazing.svg" alt="amazing" @click="evaluate('AMAZING')"/></div>
+                        <div class="bx--col"><img src="@/assets/happy.svg" alt="happy" @click="evaluate('HAPPY')"/></div>
+                    </div>
+                     <div class="bx--row">
+                        <div class="bx--col"><img src="@/assets/notgood.svg" alt="notgood" @click="evaluate('NOTGOOD')"/></div>
+                        <div class="bx--col"><img src="@/assets/bad.svg" alt="bad" @click="evaluate('BAD')"/></div>
+                    </div>
+                </div>
+            </div>
+      </template>
+    </cv-modal>
+  </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import MoodTimeline from './../components/MoodTimeline.vue'
+import Vue from "vue";
+import MoodTimeline from "./../components/MoodTimeline.vue";
 
 export default Vue.extend({
-    created: function(){
-        this.team = this.$store.getters.currentTeam
-    },
-    data: ()=>{
-        return {
-            team: []
-        }
-    }, components:{
-        MoodTimeline
-    }
-})
+  created: function() {
+    this.team = this.$store.getters.currentTeam;
+  },
+  data: () => {
+    return {
+      team: []
+    };
+  },
+  components: {
+    MoodTimeline
+  },
+  methods:{
+      evaluate(mood: string){
+          const payload = {
+              mood: mood,
+              login: this.$store.getters.login
+          }
+          console.log(payload);
+          this.$store.commit('EVALUATE_DAY', payload)
+      }
+  }
+});
 </script>
 
 <style lang="scss">
-
+img{
+    cursor: pointer;
+}
 </style>
