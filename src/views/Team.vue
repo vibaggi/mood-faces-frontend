@@ -1,11 +1,10 @@
 <template>
   <div>
     <h3>{{team.nome}}</h3>
-    <p>TESTE</p>
     <MoodTimeline :timeLineData="team.data" />
-    <cv-button>Avaliar Dia</cv-button>
+    <cv-button @click="openModal = true" :disabled="alreadyVote">Avaliar Dia</cv-button>
 
-    <cv-modal :visible="true" >
+    <cv-modal :visible="openModal" >
       <template slot="content">
         <div id="mood-timeline-data-y-legend">
                 <div class="bx--grid">
@@ -30,11 +29,18 @@ import MoodTimeline from "./../components/MoodTimeline.vue";
 
 export default Vue.extend({
   created: function() {
+    const login = this.$store.getters.login;
     this.team = this.$store.getters.currentTeam;
+    const today = new Date(Date.now())
+    today.setHours(0,0,0,0);
+    const dayData = this.team.data.find(data=> data.date == today.getTime())
+    if(!dayData || !dayData.evaluations.find(data => data.login == login)) this.alreadyVote = false
   },
   data: () => {
     return {
-      team: []
+      team: { data: new Array<any>()},
+      openModal: false,
+      alreadyVote: true
     };
   },
   components: {
@@ -46,8 +52,9 @@ export default Vue.extend({
               mood: mood,
               login: this.$store.getters.login
           }
-          console.log(payload);
           this.$store.commit('EVALUATE_DAY', payload)
+          this.openModal = false
+          this.alreadyVote = true
       }
   }
 });

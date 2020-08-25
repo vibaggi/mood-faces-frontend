@@ -28,7 +28,7 @@ export default {
         }
     },
     getters: {
-        currentTeam(state: any){
+        currentTeam(state: any): any{
             return state.teams.find( (team: any) => team._id == state.currentTeamId) || {}
         },
         team(state: any, id: number){
