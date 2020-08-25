@@ -7,6 +7,9 @@
         <cv-header-global-action aria-label="Criar Equipe" aria-controls="events-panel" @click="actionTeams" >
           <Events32 />
         </cv-header-global-action>
+        <cv-header-global-action aria-label="Sair" aria-controls="events-panel" @click="logout" >
+          <Logout32 />
+        </cv-header-global-action>
       </template>
       <template slot="left-panels"></template>
     </cv-header>
@@ -30,6 +33,7 @@
 
 <script>
 import Events32 from '@carbon/icons-vue/es/events/32'
+import Logout32 from '@carbon/icons-vue/es/logout/32'
 import { TeamService } from './../services/team.service'
 export default {
   name: "Home",
@@ -44,7 +48,7 @@ export default {
     }
   },
   components: {
-    Events32
+    Events32, Logout32
   },
   methods: {
     actionTeams(){
@@ -56,6 +60,9 @@ export default {
     showTeam(id){
       this.$store.commit('SET_CURRENT_TEAM', id)
       this.$router.push('/home/team')
+    },
+    logout(){
+      this.$router.push('/')
     }
   }
 };
