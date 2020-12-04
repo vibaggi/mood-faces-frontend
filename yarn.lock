@@ -871,6 +871,11 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@carbon/colors@^10.11.0":
+  version "10.17.0"
+  resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-10.17.0.tgz#8655ab6fe1e49575521d1f4b940261df6022ce61"
+  integrity sha512-JB7tyn9rsGhCPWeCcLIz9xoJxrPUsBUXq3KoDqsZOYrZNx6/JyCy821wPGIbVnsUSlTa2FJhJwmIgb3dq/d6Ig==
+
 "@carbon/icon-helpers@^10.7.0", "@carbon/icon-helpers@^10.9.0":
   version "10.9.0"
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.9.0.tgz#5aee08e9d253d3bf6f996bc61f739660c62cbb21"
@@ -889,6 +894,11 @@
   integrity sha512-QBzTdh+QUyW/0CAMAFzEvN6TO1aSy3EHutCImEI9aKN+Pfki/huV4e9ba0K+bmgAea4t2Q4X9yZdXq4Doa/KNQ==
   dependencies:
     "@carbon/icon-helpers" "^10.9.0"
+
+"@carbon/layout@^10.12.0":
+  version "10.15.0"
+  resolved "https://registry.yarnpkg.com/@carbon/layout/-/layout-10.15.0.tgz#6b52d49d2653c34a654aee7fe373260aa1565059"
+  integrity sha512-fL3H1CuqJN67fPeVcs4Q/acMCRrOpRhww3TWVQBvsXxTrt9OcW3sWt4k7JoH9HFEeriF4tkHC7PsxOA15H1GNQ==
 
 "@carbon/vue@^2.30.1":
   version "2.30.1"
@@ -4637,9 +4647,9 @@ hex-color-regex@^1.1.0:
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
 
 highlight.js@^9.6.0:
-  version "9.18.3"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.18.3.tgz#a1a0a2028d5e3149e2380f8a865ee8516703d634"
-  integrity sha512-zBZAmhSupHIl5sITeMqIJnYCDfAEc3Gdkqj65wC1lpI468MMQeeQkhcIAvk+RylAkxrCcI9xy9piHiXeQ1BdzQ==
+  version "9.18.5"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.18.5.tgz#d18a359867f378c138d6819edfc2a8acd5f29825"
+  integrity sha512-a5bFyofd/BHCX52/8i8uJkjr9DYwXIPnM/plwI6W7ezItLGqzt7X2G2nXuYSfsIJdkwwj/g9DG1LkcGJI/dDoA==
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
