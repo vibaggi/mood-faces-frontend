@@ -871,6 +871,11 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@carbon/colors@^10.11.0":
+  version "10.23.0"
+  resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-10.23.0.tgz#25f25016b43885e99a68aab43db58d4eac1cb050"
+  integrity sha512-gR9q+qRxegb+axf9dJD3zlsP7zN5ZMnZsuAbaD1GGfOnZf7dbISkF0o0/8IYcAnw/ot3y7e25xxp6ekBFu1M6w==
+
 "@carbon/icon-helpers@^10.7.0", "@carbon/icon-helpers@^10.9.0":
   version "10.9.0"
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.9.0.tgz#5aee08e9d253d3bf6f996bc61f739660c62cbb21"
@@ -889,6 +894,11 @@
   integrity sha512-QBzTdh+QUyW/0CAMAFzEvN6TO1aSy3EHutCImEI9aKN+Pfki/huV4e9ba0K+bmgAea4t2Q4X9yZdXq4Doa/KNQ==
   dependencies:
     "@carbon/icon-helpers" "^10.9.0"
+
+"@carbon/layout@^10.12.0":
+  version "10.23.0"
+  resolved "https://registry.yarnpkg.com/@carbon/layout/-/layout-10.23.0.tgz#7af99758abc780d1509ab109b0491bdd19623e9f"
+  integrity sha512-oO7okc7c7QPWpC0k6DeZFG219DWv4ioMYtgZ189rH81e8bjKIwc5uJh63uSZ9ITMI9+pvDu6hXaiHYIGsLza3w==
 
 "@carbon/vue@^2.30.1":
   version "2.30.1"
@@ -8281,9 +8291,9 @@ sshpk@^1.7.0:
     tweetnacl "~0.14.0"
 
 ssri@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/ssri/-/ssri-6.0.1.tgz#2a3c41b28dd45b62b63676ecb74001265ae9edd8"
-  integrity sha512-3Wge10hNcT1Kur4PDFwEieXSCMCJs/7WvSACcrMYrNp+b8kDL1/0wJch5Ni2WrtwEa2IO8OsVfeKIciKCDx/QA==
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/ssri/-/ssri-6.0.2.tgz#157939134f20464e7301ddba3e90ffa8f7728ac5"
+  integrity sha512-cepbSq/neFK7xB6A50KHN0xHDotYzq58wWCa5LeWqnPrHG8GzfEjO/4O8kpmcGW+oaxkvhEJCWgbgNk4/ZV93Q==
   dependencies:
     figgy-pudding "^3.5.1"
 
