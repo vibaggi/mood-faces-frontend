@@ -871,6 +871,11 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@carbon/colors@^10.11.0":
+  version "10.36.0"
+  resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-10.36.0.tgz#35a16b80bd40da5ee71a3a7ec75c85e1d90bd47e"
+  integrity sha512-C2M4SfsumD9lgCChR5d/2WM4941DBe6Or/lTvTOlEWX2Emm9tihr+yKhq5ztoOYk1w0iYVKTtVxi4CyYAnkJcw==
+
 "@carbon/icon-helpers@^10.7.0", "@carbon/icon-helpers@^10.9.0":
   version "10.9.0"
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.9.0.tgz#5aee08e9d253d3bf6f996bc61f739660c62cbb21"
@@ -889,6 +894,11 @@
   integrity sha512-QBzTdh+QUyW/0CAMAFzEvN6TO1aSy3EHutCImEI9aKN+Pfki/huV4e9ba0K+bmgAea4t2Q4X9yZdXq4Doa/KNQ==
   dependencies:
     "@carbon/icon-helpers" "^10.9.0"
+
+"@carbon/layout@^10.12.0":
+  version "10.36.0"
+  resolved "https://registry.yarnpkg.com/@carbon/layout/-/layout-10.36.0.tgz#03807f557abbf7db78681ac43699e5fbdfa1bcde"
+  integrity sha512-53nlp/hjJ8nd69bwc9clSeeXrJt8HBVZN9s/Ehw7enOhf21Hfnb/U2PGoGl189BspCN5tT/gXp+5fprm0nm7TA==
 
 "@carbon/vue@^2.30.1":
   version "2.30.1"
@@ -7421,9 +7431,9 @@ querystring@0.2.0:
   integrity sha1-sgmEkgO7Jd+CDadW50cAWHhSFiA=
 
 querystringify@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.1.tgz#60e5a5fd64a7f8bfa4d2ab2ed6fdf4c85bad154e"
-  integrity sha512-w7fLxIRCRT7U8Qu53jQnJyPkYZIaR4n5151KMfcJlO/A9397Wxb1amJvROTK6TOnp7PfoAmg/qXiNHI+08jRfA==
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.2.0.tgz#3345941b4153cb9d082d8eee4cda2016a9aef7f6"
+  integrity sha512-FIqgj2EUvTa7R50u0rGsyTftzjYmv/a3hO345bZNrqabNqjtgiDMgmo4mkUjd+nzU5oF3dClKqFIPUKybUyqoQ==
 
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5, randombytes@^2.1.0:
   version "2.1.0"
@@ -9032,9 +9042,9 @@ url-loader@^2.2.0:
     schema-utils "^2.5.0"
 
 url-parse@^1.4.3:
-  version "1.4.7"
-  resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.4.7.tgz#a8a83535e8c00a316e403a5db4ac1b9b853ae278"
-  integrity sha512-d3uaVyzDB9tQoSXFvuSUNFibTd9zxd2bkVrDRvF5TmvWWQwqE4lgYJ5m+x1DbecWkw+LK4RNl2CU1hHuOKPVlg==
+  version "1.5.7"
+  resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.5.7.tgz#00780f60dbdae90181f51ed85fb24109422c932a"
+  integrity sha512-HxWkieX+STA38EDk7CE9MEryFeHCKzgagxlGvsdS7WBImq9Mk+PGwiT56w82WI3aicwJA8REp42Cxo98c8FZMA==
   dependencies:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
